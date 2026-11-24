@@ -86,6 +86,9 @@ results/
 *.pt
 *.pth
 
+# --- Generated project report (PDF) - not tracked in repo ---
+G41_Project_Report.pdf
+
 # --- OS ---
 .DS_Store
 Thumbs.db

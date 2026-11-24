@@ -30,10 +30,7 @@ calibrated probability) together with fixed disclaimers, and never uploads image
 
 ## 📄 Project Report
 
-The full university project report is included in this repository:
-
-- **`G41_Project_Report.pdf`** — complete report (chapters 1–9, references, appendices A/B),
-  matching the Vishwakarma University format, with the Declaration and Certificate pages.
+The full university project report (chapters 1–9, references, appendices A/B) was generated separately as `G41_Project_Report.pdf` and is **not tracked in this repository**. It is available on request.
 
 ---
 
