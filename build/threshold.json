@@ -1,0 +1,16 @@
+{
+  "rule": "lowest confidence threshold whose validation selective accuracy is >= min_selective_accuracy",
+  "min_selective_accuracy": 0.8,
+  "split": "S2 validation (selection data only)",
+  "n": 429,
+  "rule_met": true,
+  "threshold": 0.56977624,
+  "confidence_definition": "max softmax probability ('model score', uncalibrated)",
+  "validation_coverage": 0.7878787878787878,
+  "validation_selective_accuracy": 0.8017751479289941,
+  "n_covered": 338,
+  "n_uncertain": 91,
+  "validation_overall_accuracy": 0.7342657342657343,
+  "curve_points": 429,
+  "source_file": "build/freeze/regen_val_preds.csv"
+}

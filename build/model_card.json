@@ -1,0 +1,122 @@
+{
+  "model_version": "leaf-v1",
+  "generated_from": [
+    "results/phase2/arch3_selection.json",
+    "results/phase2/arch3_mobilenet_v3_large_seed42.json",
+    "results/phase2/majority_baseline.json",
+    "results/phase2/spec_extras_summary.json",
+    "results/splits_S2/classes.json",
+    "build/freeze_report.json",
+    "build/threshold.json",
+    "build/test_eval.json",
+    "build/onnx_export.json",
+    "build/config.json",
+    "tomatoguard/research/models.py",
+    "build/tflite_export.json"
+  ],
+  "task": "7-class leaf photo classifier (screening aid for research)",
+  "training": {
+    "split": "S2 (group-disjoint)",
+    "architecture": "mobilenet_v3_large",
+    "selection_criterion": "mean best-validation accuracy over 3 seeds; validation only - test metrics are reported but never used for selection (HARD RULE 3)",
+    "seeds": 3,
+    "per_seed_validation_accuracy": {
+      "42": 0.7342657342657343,
+      "43": 0.7062937062937062,
+      "44": 0.717948717948718
+    },
+    "selected_seed": 42,
+    "selected_seed_best_validation_accuracy": 0.7342657342657343,
+    "selected_seed_best_epoch": 8,
+    "epochs": 10,
+    "retrain_report": "build/freeze_report.json",
+    "retrain_vs_archived_max_abs_prob_diff": 0.0
+  },
+  "threshold": {
+    "rule": "lowest confidence threshold whose validation selective accuracy is >= min_selective_accuracy",
+    "threshold": 0.56977624,
+    "validation_coverage": 0.7878787878787878,
+    "validation_selective_accuracy": 0.8017751479289941,
+    "rule_met": true
+  },
+  "test": {
+    "split": "S2 test, touched once after validation-only selection",
+    "n": 428,
+    "accuracy": 0.6822429906542056,
+    "accuracy_95_ci": [
+      0.6378504672897196,
+      0.7266355140186916
+    ],
+    "macro_auc": 0.9151507845922608,
+    "macro_auc_95_ci": [
+      0.8969296768894506,
+      0.9325109575587716
+    ],
+    "coverage": 0.794392523364486,
+    "coverage_95_ci": [
+      0.7546728971962616,
+      0.8317757009345794
+    ],
+    "selective_accuracy": 0.75,
+    "selective_accuracy_95_ci": [
+      0.7029411764705882,
+      0.7941176470588235
+    ],
+    "n_uncertain": 88,
+    "bootstrap": {
+      "n_draws": 5000,
+      "seed": 42,
+      "ci": 0.95
+    }
+  },
+  "baseline": {
+    "majority_class_S2_test": "Leaf Miner Flies",
+    "majority_accuracy_S2_test": 0.296729,
+    "source": "results/phase2/majority_baseline.json (S2_group_disjoint)"
+  },
+  "calibration": {
+    "temperature_scaling_applied": false,
+    "ece_frozen_model_s2_validation": 0.05704978622377619,
+    "ece_bins": 15,
+    "ece_source": "computed from build/freeze/regen_val_preds.csv (S2 validation)",
+    "archived_reference": {
+      "checkpoint": "user's original best_mobilenetv3.pth (S1-trained)",
+      "fit_split": "S1 validation (HARD RULE 3: test not used to fit)",
+      "ece_before": 0.057786,
+      "ece_after": 0.070591,
+      "fitted_temperature": 1.397963,
+      "source": "results/phase2/spec_extras_summary.json"
+    },
+    "statement": "raw softmax is shown as 'model score'; it is NOT a calibrated probability (the archived analysis found temperature scaling made ECE worse, so none is applied here)"
+  },
+  "exports": {
+    "onnx": {
+      "file": "build/models/leaf_mobilenet_v3_large_seed42.onnx",
+      "opset": 17,
+      "sha256": "72f1fa05cbfddb834b694adf77868e0d1f92bbaa54b26b80a61a6ec606db7bb3",
+      "parity_max_abs_logit_diff": 3.2782554626464844e-05,
+      "tolerance": 0.0001,
+      "pass": true
+    },
+    "tflite": {
+      "file": "build/models/leaf_mobilenet_v3_large_seed42.tflite",
+      "sha256": "9ebd4c08a92723f32d43910eb06de2b10e8e8220d0f4c21c10375bd30ed2ee2a",
+      "parity_max_abs_logit_diff": 3.4809112548828125e-05,
+      "tolerance": 0.001,
+      "pass": true
+    }
+  },
+  "known_confusions": {
+    "note": "the two most-confused classes on S2 test, read from the frozen model's confusion matrix in build/test_eval.json",
+    "pairs": []
+  },
+  "limitations": [
+    "Trained on one public dataset of lab-style leaf photos; accuracy on farm photos is unknown.",
+    "This leaf model does not detect ToBRFV (no such class exists in the training data).",
+    "Labels are disease/condition classes of the leaf dataset; no symptom-onset timing is available.",
+    "Early Blight vs Leaf Miner Flies are the dominant confusion pair.",
+    "No field validation and no phone-camera validation have been performed.",
+    "Model score is uncalibrated; do not read it as a probability.",
+    "Distillation was not run."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "_comment": "Pre-registered settings for the TomatoGuard AI prototype. This file MUST exist before any threshold or selection step runs (spec Phase 1.2). Values here are inputs, not results.",
+  "model_selection": {
+    "architecture": "mobilenet_v3_large",
+    "seed": 42,
+    "split": "S2 (group-disjoint)",
+    "selection_data": "validation only",
+    "source": "results/phase2/arch3_selection.json"
+  },
+  "uncertain_threshold_rule": {
+    "description": "lowest confidence threshold whose validation selective accuracy is >= min_selective_accuracy",
+    "min_selective_accuracy": 0.80,
+    "confidence_definition": "max softmax probability ('model score', uncalibrated)",
+    "fitted_on": "S2 validation only; evaluated on S2 test exactly once"
+  },
+  "onnx": {
+    "opset": 17,
+    "input_shape": [1, 3, 224, 224],
+    "parity_max_abs_logit_diff": 1e-4
+  },
+  "tflite": {
+    "dtype": "fp32",
+    "parity_max_abs_logit_diff": 1e-3
+  },
+  "golden_vectors": {
+    "n": 50,
+    "source": "S2 test JPEGs, fixed list in build/golden/manifest.json",
+    "platform_top1_agreement_min": 0.98,
+    "platform_mean_abs_prob_diff_max": 0.02
+  },
+  "bootstrap": {
+    "n_draws": 5000,
+    "seed": 42,
+    "ci": 0.95
+  }
+}

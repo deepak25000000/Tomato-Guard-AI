@@ -1,0 +1,2 @@
+phone_model,android_version,build_type,threads,warmup_runs,timed_runs,median_ms,p95_ms,peak_ram_mb,battery_drop_percent_500_scans,notes
+PENDING - no physical phone available in this build environment,,release,2,20,100,,,,,"Record only from a REAL phone; emulator numbers must be labelled emulator and never used as phone results"

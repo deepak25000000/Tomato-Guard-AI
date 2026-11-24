@@ -1,0 +1,14 @@
+numpy
+pandas
+pillow
+scikit-learn
+scipy
+matplotlib
+seaborn
+tqdm
+torch
+torchvision
+onnx
+onnxruntime
+# Optional, Linux only, for direct PyTorch -> TFLite export:
+# ai-edge-torch

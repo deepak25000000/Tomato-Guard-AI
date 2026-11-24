@@ -1,0 +1,47 @@
+{
+  "_comment": "INPUT reference file (not a result). Verbatim quotes from the dataset's own data-description article, fetched 2026-11-21 from PubMed Central, for use in RESULTS.md (Group B5). Quotes are copied exactly, including the article's grammar. Any sentence that is OURS rather than the article's is marked with field 'our_statement'.",
+  "citation": {
+    "title": "Longitudinal multispectral image dataset for ToBRFV disease detection in tomato and pepper plants",
+    "authors": "Edizkan R, Yilmaz F, Keles Ozturk P, Yavuz S, Gerek ON, Yavuz HS, Onder S, Keles D",
+    "journal": "Data in Brief, 2026 Jun 4; 67:112927",
+    "doi": "10.1016/j.dib.2026.112927",
+    "pmcid": "PMC13276747",
+    "pmid": "42327349",
+    "license": "CC BY 4.0",
+    "fetched_from": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13276747/",
+    "fetched_on": "2026-11-21",
+    "dataset_repository": "Zenodo DOI 10.5281/zenodo.17244968"
+  },
+  "how_labels_were_assigned": [
+    {
+      "section": "Section 4.2, 'Mechanical inoculation of ToBRFV and verification of its transmission'",
+      "quote": "Transmission was verified using RT-PCR and real-time RT-PCR. Following the second inoculation, fresh leaf tissue was collected on days 7 and 14, and total RNA was extracted using an Norgen brand RNA purification kit. RT-PCR implemented for confirmation of ToBRFV infection resulting the mechanical inoculation.",
+      "what_it_shows": "infection status = inoculation by design, verified molecularly (RT-PCR / real-time RT-PCR) on days 7 and 14 after the second inoculation - not visual symptom scoring"
+    },
+    {
+      "section": "Section 3, 'Data Description'",
+      "quote": "Among these, the virus-inoculated groups comprised 90 tomato plants (45 designated as Tomato I and 45 as Tomato II) and 90 pepper plants (45 designated as Pepper I and 45 as Pepper II), all of which were mechanically inoculated with a confirmed isolate of TOBRFV. The remaining 77 tomato plants and 90 pepper plants were planted as healthy controls. Imaging was conducted over a 29-day period, beginning on the day of inoculation, with captures taken at predefined daily intervals in the greenhouses of the Adana Biological Control Research Institution.",
+      "what_it_shows": "labels are PLANT-level and fixed by experimental design (inoculated group vs healthy control); imaging starts on the day of inoculation"
+    },
+    {
+      "section": "Abstract",
+      "quote": "Infection status was confirmed via Reverse Transcription quantitative Polymerase Chain Reaction (RT-qPCR) analysis at multiple time points.",
+      "what_it_shows": "the article's one-sentence summary of label verification"
+    },
+    {
+      "section": "Section 4.4, 'Preprocessing', labeling step",
+      "quote": "Each cropped image was systematically labeled using the format: Virus_Healthy_Day_Camera_Bandpass_IR_Filter_Angle_PotID, with extensions in both TIF and PNG. For example, the file name V_4_VNIR_800nm_5_12.tif indicates that the image belongs to a virus infected plant in pot 12, taken on the fourth day of the experiment using the VNIR camera at 800 nm with a 5\\u00b0 angle.",
+      "what_it_shows": "the per-image annotation encodes infection status, day, camera, angle and pot ID - no symptom field"
+    }
+  ],
+  "symptom_onset_information_exists": {
+    "our_statement": "No. The released dataset carries no symptom-onset annotation: the filename/folder scheme (Section 4.4 quote above) encodes only status, day, camera, bandpass, angle and pot, and the article's own Limitations state that the dataset does not contain records beyond transmission validation. The only day-level temporal anchors are the 29-day imaging schedule beginning at inoculation (Section 3) and the RT-PCR/real-time RT-PCR verification on days 7 and 14 after the second inoculation (Section 4.2). Consequently no image in this dataset can be tagged as asymptomatic-at-capture or symptomatic from the released annotations alone.",
+    "evidence_quote": {
+      "section": "Limitations",
+      "quote": "While it includes comprehensive imaging data and verified infection status, it does not provide detailed environmental parameters such as light intensity, humidity, or temperature, nor does it contain agronomic records beyond the validation of ToBRFV transmission."
+    }
+  },
+  "warning_1_correction": {
+    "our_statement": "Corrected wording for RESULTS.md warning 1: plants are labelled by experimental design (mechanically inoculated vs healthy control, Section 3) with infection status verified by RT-PCR / real-time RT-PCR (Section 4.2) - NOT by scoring visible symptoms. However, because the dataset contains no symptom-onset dates, images cannot be separated into captures taken before vs after symptoms appeared, so nothing in this report establishes performance on plants whose symptoms have not yet appeared (HARD RULE 8 still applies, for this reason)."
+  }
+}

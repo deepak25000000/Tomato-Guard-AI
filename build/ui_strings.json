@@ -1,0 +1,11 @@
+{
+  "_comment": "Single source of truth for fixed UI strings (spec Phase 0/3/4). Every client (Flutter, PWA, FastAPI viewer) loads these values from this file via its build step or asset copy; no client may retype them. Forbidden words are absent by construction - see tests/test_prototype.py::test_no_forbidden_phrases.",
+  "DISCLAIMER": "Screening aid for research. Not a diagnosis. Confirm with an agronomist or laboratory test.",
+  "SCOPE": "Trained on one public dataset of lab-style leaf photos. Accuracy on farm photos is unknown.",
+  "TOBRFV": "This leaf model does not detect ToBRFV.",
+  "UNCERTAIN": "Not confident. Re-photograph one leaf, filling the frame, in good light.",
+  "RESEARCH_BANNER": "Research demo on recorded greenhouse data. Not for field use.",
+  "SINGLE_CLASS_DAY_WARNING": "Single-class day - interpret with caution.",
+  "MODEL_SCORE_LABEL": "model score",
+  "CONFIRMED_LABEL_PROMPT": "Confirmed label (optional):"
+}

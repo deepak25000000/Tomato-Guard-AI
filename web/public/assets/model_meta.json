@@ -1,0 +1,58 @@
+{
+  "model_version": "leaf-v1",
+  "arch": "mobilenet_v3_large",
+  "seed": 42,
+  "training_split": "S2 (group-disjoint)",
+  "selection_data": "validation only",
+  "input_size": [
+    224,
+    224
+  ],
+  "input_layout": "NCHW float32, /255 then ImageNet mean/std",
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "classes": [
+    "Bacteiral Spot",
+    "Early Blight",
+    "Healthy",
+    "Late Blight",
+    "Leaf Miner Flies",
+    "Magnesium Deficiency",
+    "Yellow Leaf Curl Virus"
+  ],
+  "display_labels": [
+    "Bacterial Spot",
+    "Early Blight",
+    "Healthy",
+    "Late Blight",
+    "Leaf Miner Flies",
+    "Magnesium Deficiency",
+    "Yellow Leaf Curl Virus"
+  ],
+  "display_label_map": {
+    "Bacteiral Spot": "Bacterial Spot"
+  },
+  "threshold": 0.56977624,
+  "threshold_rule": "lowest confidence threshold whose validation selective accuracy is >= min_selective_accuracy",
+  "sha256": {
+    "checkpoint": "54a474962802096f0861a135a854f22320d5cf7aba6f491adc65f3ee9fa4b250",
+    "onnx": "72f1fa05cbfddb834b694adf77868e0d1f92bbaa54b26b80a61a6ec606db7bb3",
+    "tflite": "9ebd4c08a92723f32d43910eb06de2b10e8e8220d0f4c21c10375bd30ed2ee2a"
+  },
+  "model_files": {
+    "checkpoint": "build/checkpoint/mobilenet_v3_large_seed42.pt",
+    "onnx": "build/models/leaf_mobilenet_v3_large_seed42.onnx",
+    "tflite": "build/models/leaf_mobilenet_v3_large_seed42.tflite"
+  },
+  "preprocessing_doc": "docs/PREPROCESSING.md",
+  "ui_strings": "build/ui_strings.json",
+  "generated": "2026-11-22T10:32:24Z"
+}

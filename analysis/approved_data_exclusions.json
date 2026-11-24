@@ -1,0 +1,20 @@
+{
+  "_comment": "INPUT decision file (not a result). Lists raw-data defects the user approved for exclusion. Scripts may exclude ONLY tuples listed here; any other unpairable tuple aborts the run (HARD RULE 6).",
+  "decision": "Exclude unpairable capture tuples from the 4-stream wide manifest (Phase 3) and therefore from all Phase 4 modes, so rgb / spectral / fusion runs see identical data. The files remain in per-stream quality and claims audits - they are valid images - and are never deleted or renamed on disk (HARD RULE 2).",
+  "approved_by": "user, via question on 2026-11-21",
+  "evidence": "40716 files = 4 streams x 10179; 10180 capture tuples; 10178 have all 4 streams. The 2 exceptions are complementary (plant 14: 34 RGB / 33 spectral images overall; plant 17: 27 RGB / 28 spectral). Filenames cannot distinguish 'one misnamed file' from 'two independently missing captures', so no pairing is guessed.",
+  "exclusions": [
+    {
+      "tuple_key": "Tomato|I|V_20|day=20|angle=15|plant=14",
+      "present_streams": ["RGB"],
+      "missing_streams": ["VNIR", "VNIR_800nm", "VNIR_1000nm"],
+      "reason": "RGB image exists; its three spectral counterparts do not."
+    },
+    {
+      "tuple_key": "Tomato|I|V_20|day=20|angle=15|plant=17",
+      "present_streams": ["VNIR", "VNIR_800nm", "VNIR_1000nm"],
+      "missing_streams": ["RGB"],
+      "reason": "Spectral triplet exists; its RGB counterpart does not."
+    }
+  ]
+}

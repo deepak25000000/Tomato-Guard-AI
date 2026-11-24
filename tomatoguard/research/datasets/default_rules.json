@@ -1,0 +1,97 @@
+[
+  {
+    "any": [
+      "fruit",
+      "fruits"
+    ],
+    "label": null,
+    "_note": "leaf app: skip fruit-only classes"
+  },
+  {
+    "all": [
+      "bacterial",
+      "spot"
+    ],
+    "label": "Bacterial Spot"
+  },
+  {
+    "all": [
+      "bacteiral",
+      "spot"
+    ],
+    "label": "Bacterial Spot",
+    "_note": "typo in the Mendeley folder name 'Bacteiral Spot'"
+  },
+  {
+    "all": [
+      "early",
+      "blight"
+    ],
+    "label": "Early Blight"
+  },
+  {
+    "all": [
+      "late",
+      "blight"
+    ],
+    "label": "Late Blight"
+  },
+  {
+    "all": [
+      "yellow"
+    ],
+    "any": [
+      "curl",
+      "virus"
+    ],
+    "label": "Yellow Leaf Curl Virus"
+  },
+  {
+    "any": [
+      "curl"
+    ],
+    "label": null,
+    "_note": "ambiguous 'leaf curl' folders: skipped unless you verify they are TYLCV"
+  },
+  {
+    "any": [
+      "mildiou"
+    ],
+    "label": null,
+    "_note": "FieldPlant 'Mildiou': verify against the FieldPlant paper before mapping"
+  },
+  {
+    "any": [
+      "healthy"
+    ],
+    "label": "Healthy"
+  },
+  {
+    "exact": [
+      "tomato leaf"
+    ],
+    "label": "Healthy",
+    "_note": "PlantDoc: plain 'Tomato leaf' is the healthy class"
+  },
+  {
+    "any": [
+      "septoria",
+      "mold",
+      "mould",
+      "mosaic",
+      "mite",
+      "miner",
+      "magnesium",
+      "deficiency",
+      "wilt",
+      "spot",
+      "blight",
+      "virus",
+      "target",
+      "stunt",
+      "rot",
+      "worm"
+    ],
+    "label": "Other Problem"
+  }
+]

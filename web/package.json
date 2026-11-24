@@ -1,0 +1,21 @@
+{
+  "name": "tomatoguard-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test:golden": "node scripts/golden_parity.mjs"
+  },
+  "dependencies": {
+    "onnxruntime-web": "1.20.1"
+  },
+  "devDependencies": {
+    "typescript": "5.7.3",
+    "vite": "6.1.0",
+    "@types/node": "22.13.4",
+    "onnxruntime-node": "1.20.1"
+  }
+}

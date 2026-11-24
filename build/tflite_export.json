@@ -1,0 +1,12 @@
+{
+  "tflite_file": "build/models/leaf_mobilenet_v3_large_seed42.tflite",
+  "sha256": "9ebd4c08a92723f32d43910eb06de2b10e8e8220d0f4c21c10375bd30ed2ee2a",
+  "dtype": "fp32",
+  "n_golden": 50,
+  "parity_max_abs_logit_diff_torch_vs_tflite": 3.4809112548828125e-05,
+  "tolerance": 0.001,
+  "top1_agreement": 1.0,
+  "pass": true,
+  "runtime": "ai-edge-litert interpreter (main venv)",
+  "runtime_s": 5.2
+}

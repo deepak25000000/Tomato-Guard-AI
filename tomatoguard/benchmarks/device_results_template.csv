@@ -1,0 +1,1 @@
+device_model,android_version,soc,ram_gb,model_file,precision,threads,median_ms,p95_ms,peak_ram_mb,battery_start_pct,battery_end_pct,n_inferences,accuracy_on_device_subset,notes

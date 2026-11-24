@@ -1,0 +1,111 @@
+# =============================================================================
+# TomatoGuard AI - .gitignore
+# Only necessary project files are tracked. Generated caches, logs, raw data,
+# virtual environments, and build intermediates are excluded.
+# =============================================================================
+
+# --- Python ---
+.venv/
+venv/
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+*.egg-info/
+dist/
+build/piptmp/
+build/venvs/
+build/wheelhouse/
+analysis/__pycache__/
+api/__pycache__/
+tomatoguard/app/.dart_tool/
+
+# --- Flutter / Dart ---
+.dart_tool/
+.packages
+.metadata
+flutter_build.pid
+wait_and_build_apk.pid
+
+# --- Android / Gradle ---
+*.gradle
+.gradle/
+**/android/app/build/
+**/android/.gradle/
+**/android/local.properties
+**/android/keystore.properties
+*.jks
+*.keystore
+
+# --- Node / Web ---
+node_modules/
+web/node_modules/
+web/dist/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Build logs & intermediates (generated) ---
+build/*.log
+build/*.pid
+build/*.nohup.log
+build/checkpoint/
+build/freeze/
+build/golden/
+build/parity/__pycache__/
+build/export_venv_install.log
+build/export_venv_setup.log
+build/flutter_build.log
+build/sdk_install.log
+build/toolchain_setup.log
+build/web_build.log
+build/web_npm_install.log
+build/trackb_export.log
+
+# --- Analysis run logs (generated at runtime) ---
+analysis/*.log
+analysis/groupA_chain.log
+analysis/groupA_chain_attempt1_failed.log
+analysis/groupB_tail.log
+analysis/ram_watch.log
+
+# --- Raw datasets (not part of project code; do not commit) ---
+TOBRFV-LMID/
+"Tomato Leaf Disease Classification Dataset/"
+results/
+
+# --- Large generated artifacts (rebuilt from source) ---
+*.onnx
+*.tflite
+*.pt
+*.pth
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- IDE ---
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# =============================================================================
+# EXPLICITLY TRACKED (despite patterns above):
+#   !build/TomatoGuardAI-release.apk        # prototype APK for download (Releases)
+#   !build/apk_release.sha256               # APK hash
+#   !build/models/leaf_mobilenet_v3_large_seed42.onnx   # frozen model (ONNX)
+#   !build/models/leaf_mobilenet_v3_large_seed42.tflite # frozen model (TFLite)
+#   !tomatoguard/app/assets/models/tomatoguard.tflite   # app-bundled TFLite model
+# =============================================================================
+!build/TomatoGuardAI-release.apk
+!build/apk_release.sha256
+!build/models/leaf_mobilenet_v3_large_seed42.onnx
+!build/models/leaf_mobilenet_v3_large_seed42.tflite
+!tomatoguard/app/assets/models/tomatoguard.tflite

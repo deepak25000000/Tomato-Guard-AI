@@ -1,0 +1,14 @@
+{
+  "tflite_file": "build/models/leaf_mobilenet_v3_large_seed42.tflite",
+  "sha256": "9ebd4c08a92723f32d43910eb06de2b10e8e8220d0f4c21c10375bd30ed2ee2a",
+  "dtype": "fp32",
+  "converter": "ai-edge-torch",
+  "converter_module": "litert_torch",
+  "converter_version": "0.10.0",
+  "torch": "2.14.1+cpu",
+  "python": "3.11.18",
+  "venv_torch_vs_manifest_max_abs_logit_diff": 7.152557373046875e-06,
+  "n_golden": 50,
+  "runtime_s": 19.2,
+  "note": "numerical parity vs PyTorch is decided in the main venv by parity_tflite.py"
+}

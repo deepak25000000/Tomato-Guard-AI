@@ -1,0 +1,9 @@
+{
+  "name": "TomatoGuard AI (Research)",
+  "short_name": "TomatoGuard",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#1b5e20",
+  "icons": []
+}

@@ -1,0 +1,12 @@
+{
+  "datasets": [
+    {"name": "mendeley7", "root": "/path/to/Tomato Leaf Disease Classification Dataset/Tomato Dataset", "priority": 0},
+    {"name": "plantdoc", "root": "/path/to/PlantDoc-Dataset", "not_tomato_unless": "tomato", "priority": 1},
+    {"name": "fieldplant", "root": "/path/to/FieldPlant", "not_tomato_unless": "tomato", "priority": 2},
+    {"name": "ccmt", "root": "/path/to/CCMT", "priority": 3},
+    {"name": "tom2024", "root": "/path/to/TOM2024", "priority": 4},
+    {"name": "tomato_field_2026", "root": "/path/to/Tomato Leaf and Fruit Disease Image Dataset", "priority": 5},
+    {"name": "own_phone", "root": "/path/to/own_phone_photos_sorted_by_class", "priority": 6}
+  ],
+  "_notes": "Each root must contain images in class-named folders (class = the image's parent folder). Delete entries you did not download. priority: lower = kept when exact duplicates occur. own_phone = your confirmed-label photos exported from the app."
+}

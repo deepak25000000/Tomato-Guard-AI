@@ -1,0 +1,17 @@
+{
+  "arch": "mobilenet_v3_large",
+  "seed": 42,
+  "split": "S2",
+  "epochs": 10,
+  "best_val_accuracy": 0.7342657342657343,
+  "best_epoch": 8,
+  "val_accuracy_from_probs": 0.7342657342657343,
+  "val_n": 429,
+  "checkpoint": "build/checkpoint/mobilenet_v3_large_seed42.pt",
+  "archived_val_source": "results/phase2/arch3_mobilenet_v3_large_seed42_val_preds.csv",
+  "archived_val_rows_joined": 429,
+  "archived_val_max_abs_diff": 0.0,
+  "archived_val_all_preds_equal": true,
+  "runtime_s": 2486.1,
+  "torch": "2.15.0+cpu"
+}

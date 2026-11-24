@@ -1,0 +1,40 @@
+{
+  "_comment": "INPUT claims supplied by the user / paper. These are VALUES TO TEST, not results. Every actual result number is computed by the scripts in analysis/ and written to results/.",
+  "phase1_trackA_class_counts": {
+    "source": "user message, Phase 1a (their earlier run)",
+    "by_display_label": {
+      "Bacterial Spot": 117,
+      "Early Blight": 524,
+      "Healthy": 380,
+      "Late Blight": 112,
+      "Leaf Miner Flies": 884,
+      "Magnesium Deficiency": 744,
+      "Yellow Leaf Curl Virus": 234
+    },
+    "total": 2995
+  },
+  "phase1_original_split_sizes": {
+    "source": "user message, Phase 1e",
+    "train": 2096,
+    "validation": 449,
+    "test": 450
+  },
+  "phase2_published_baseline": {
+    "source": "user message Phase 2b + ~/Downloads/Tomato_Research_Results/final_results.json",
+    "test_accuracy": 0.6733333333333333
+  },
+  "phase3_paper_claims": {
+    "source": "user message, Phase 3d (paper Section V-A)",
+    "images_per_stream": 4808,
+    "n_plants": 167,
+    "plants_healthy": 77,
+    "plants_infected": 90,
+    "prevalence_pct_by_angle": {"0": 68.0, "5": 52.1, "15": 52.2},
+    "prevalence_pct_by_batch": {"I": 64.6, "II": 60.0},
+    "n_mixed_label_days": 11,
+    "mixed_label_days": [9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29],
+    "cohens_d_plant_level": {"rgb": 0.543, "vnir": 0.647, "nir800": -0.014, "nir1000": -0.897},
+    "cohens_d_image_level": {"rgb": 0.296, "vnir": 0.281, "nir800": -0.012, "nir1000": -0.304},
+    "tolerance": {"counts": "exact", "prevalence_pp": 0.1, "cohens_d": 0.01}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "platform": "node",
+  "n": 50,
+  "top1Agreement": 1,
+  "meanAbsProbDiff": 4.0934426292760313e-7,
+  "tolerances": {
+    "top1": 0.98,
+    "meanAbsProbDiff": 0.02
+  },
+  "pass": true
+}

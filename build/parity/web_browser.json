@@ -1,0 +1,13 @@
+{
+  "platform": "browser_canvas",
+  "n": 50,
+  "top1Agreement": 0.84,
+  "top1ok": 42,
+  "meanAbsProbDiff": 0.05057626979496525,
+  "tolerances": {
+    "top1": 0.98,
+    "meanAbsProbDiff": 0.02
+  },
+  "pass": false,
+  "note": "ORT runtime parity with same preprocessed NCHW is PASS (1.0, 4.2e-7); gap is browser JPEG decode+resize vs Pillow reference. Manual bilinear half-pixel-center resize used; still above tolerance."
+}

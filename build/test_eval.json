@@ -1,0 +1,72 @@
+{
+  "split": "S2 test (touched once, after validation-only threshold selection)",
+  "n_test": 428,
+  "classes": [
+    "Bacteiral Spot",
+    "Early Blight",
+    "Healthy",
+    "Late Blight",
+    "Leaf Miner Flies",
+    "Magnesium Deficiency",
+    "Yellow Leaf Curl Virus"
+  ],
+  "threshold": 0.56977624,
+  "threshold_source": "build/threshold.json (S2 validation risk-coverage rule)",
+  "accuracy": 0.6822429906542056,
+  "accuracy_95_ci": [
+    0.6378504672897196,
+    0.7266355140186916
+  ],
+  "macro_auc": 0.9151507845922608,
+  "macro_auc_95_ci": [
+    0.8969296768894506,
+    0.9325109575587716
+  ],
+  "coverage": 0.794392523364486,
+  "coverage_95_ci": [
+    0.7546728971962616,
+    0.8317757009345794
+  ],
+  "n_covered": 340,
+  "n_uncertain": 88,
+  "selective_accuracy": 0.75,
+  "selective_accuracy_95_ci": [
+    0.7029411764705882,
+    0.7941176470588235
+  ],
+  "model": "mobilenet_v3_large",
+  "seed": 42,
+  "best_epoch": 8,
+  "best_val_accuracy": 0.7342657342657343,
+  "bootstrap": {
+    "n_draws": 5000,
+    "seed": 42,
+    "ci": 0.95
+  },
+  "runtime_s": 57.3,
+  "note": "raw softmax = model score; uncalibrated (temperature scaling worsened ECE)",
+  "ci_correction": {
+    "date": "2026-11-23",
+    "bug": "eval_test_once.py used quantiles [(1-alpha)/2, 1-(1-alpha)/2] = [0.475, 0.525] (a ~5% interval) instead of [alpha/2, 1-alpha/2] = [0.025, 0.975]; fixed in build/scripts/eval_test_once.py",
+    "method": "bootstrap recomputed from saved predictions results/phase2/arch3_mobilenet_v3_large_seed42_preds.csv (same draws/seed as the one-shot evaluation; no test image read, no re-inference, point estimates unchanged - verified exact)",
+    "previous_ci_too_narrow": {
+      "accuracy_95_ci": [
+        0.6799065420560748,
+        0.6845794392523364
+      ],
+      "macro_auc_95_ci": [
+        0.9146058213386322,
+        0.9157267602494327
+      ],
+      "coverage_95_ci": [
+        0.794392523364486,
+        0.7967289719626168
+      ],
+      "selective_accuracy_95_ci": [
+        0.75,
+        0.7529411764705882
+      ]
+    },
+    "runtime_s": 34.5
+  }
+}

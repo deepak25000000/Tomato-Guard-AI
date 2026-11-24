@@ -1,0 +1,7 @@
+research/runs/
+research/splits/
+*.pt
+*.onnx
+__pycache__/
+.dart_tool/
+build/

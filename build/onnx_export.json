@@ -1,0 +1,19 @@
+{
+  "onnx_file": "build/models/leaf_mobilenet_v3_large_seed42.onnx",
+  "sha256": "72f1fa05cbfddb834b694adf77868e0d1f92bbaa54b26b80a61a6ec606db7bb3",
+  "opset": 17,
+  "input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "n_golden": 50,
+  "parity_max_abs_logit_diff_torch_vs_onnx": 3.2782554626464844e-05,
+  "tolerance": 0.0001,
+  "pass": true,
+  "golden_recompute_max_abs_diff": 7.152557373046875e-06,
+  "onnxruntime": "1.32.0",
+  "torch": "2.15.0+cpu",
+  "runtime_s": 3.8
+}
